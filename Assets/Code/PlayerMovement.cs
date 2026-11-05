@@ -11,9 +11,6 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private Transform headTarget;
     [SerializeField] private float mouseSensitivity = 2f;
 
-    [Header("Animator")]
-    [SerializeField] private Animator animations;
-
     private CharacterController controller;
     private Vector3 velocity;
 
@@ -26,10 +23,6 @@ public class PlayerMovement : MonoBehaviour
     {
         controller = GetComponent<CharacterController>();
 
-        if (animations == null)
-        {
-            Debug.LogError("Animator não foi atribuído no Inspector!");
-        }
 
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
@@ -39,32 +32,8 @@ public class PlayerMovement : MonoBehaviour
     {
         HandleMovement();
         HandleRotation();
-        UpdateAnimations();
     }
 
-    private void UpdateAnimations()
-    {
-        if (animations == null)
-            return;
-
-        float horizontal = Input.GetAxisRaw("Horizontal");
-        float vertical = Input.GetAxisRaw("Vertical");
-
-        float movementAmount = new Vector2(horizontal, vertical).magnitude;
-
-        animations.SetFloat("MoveX", horizontal);
-        animations.SetFloat("MoveY", vertical);
-
-        bool isJumping = !controller.isGrounded;
-        animations.SetBool("IsJumping", isJumping);
-
-        if (movementAmount < 0.1f && wasMoving)
-        {
-            animations.SetTrigger("StopMoving");
-        }
-
-        wasMoving = movementAmount > 0.1f;
-    }
 
     private void HandleMovement()
     {
