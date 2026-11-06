@@ -15,7 +15,7 @@ public class Gun : MonoBehaviour
     {
         AimGun();
 
-        if (Input.GetButtonDown("Fire1"))
+        if (!ScoreManager.gameOver && Input.GetButtonDown("Fire1"))
         {
             Shoot();
         }

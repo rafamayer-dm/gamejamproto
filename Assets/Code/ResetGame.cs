@@ -7,7 +7,14 @@ public class ResetGame : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.R))
         {
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+           RestartGame();
         }
+    }
+
+    public void RestartGame ()
+    {
+        Time.timeScale = 1f; // volta ao tempo normal
+
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
