@@ -16,13 +16,14 @@ Scene: gamejamproto
     [C] MeshRenderer
     [C] CapsuleCollider
   - HeadTarget
-  - Gun
-    [C] ProBuilderMesh
-    [C] ProBuilderShape
-    [C] MeshRenderer
-    [C] MeshFilter
-    [C] MeshCollider
-    [C] Gun
+  - GunPivot
+    - Gun
+      [C] ProBuilderMesh
+      [C] ProBuilderShape
+      [C] MeshRenderer
+      [C] MeshFilter
+      [C] MeshCollider
+      [C] Gun
 - FPS
   [C] CinemachineCamera
   [C] CinemachineHardLockToTarget
