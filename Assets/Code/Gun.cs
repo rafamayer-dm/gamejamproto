@@ -6,6 +6,9 @@ public class Gun : MonoBehaviour
     public GameObject bulletPrefab;
     public Transform firePoint;
     public float bulletSpeed = 50f;
+    public AudioSource audioSource;
+    public AudioClip shootSFX;
+
 
     [Header("Mira da Arma")]
     public Transform cameraTransform; // Arraste a MainCamera (ou FPS) para aqui
@@ -17,6 +20,7 @@ public class Gun : MonoBehaviour
 
         if (!ScoreManager.gameOver && Input.GetButtonDown("Fire1"))
         {
+            audioSource.PlayOneShot(shootSFX);
             Shoot();
         }
     }
@@ -43,6 +47,7 @@ public class Gun : MonoBehaviour
         GameObject bullet = Instantiate(bulletPrefab, firePoint.position, firePoint.rotation);
 
         Rigidbody rb = bullet.GetComponent<Rigidbody>();
+        
         if (rb != null)
         {
             rb.linearVelocity = firePoint.forward * bulletSpeed;

@@ -7,6 +7,12 @@ public class Balloon : MonoBehaviour
 
     [Header("Pontuação")]
     public int pointsValue = 10; // Quantidade de pontos que este balão vale
+    public AudioClip PopBalloon;
+    private AudioSource audioSource;
+
+    private void Start() {
+    audioSource = GetComponent<AudioSource>();
+}
 
     private void Update()
     {
@@ -19,6 +25,7 @@ public class Balloon : MonoBehaviour
         if (pig != null)
         {
             pig.transform.SetParent(null);
+            
             pig.Fall();
         }
 
@@ -28,7 +35,14 @@ public class Balloon : MonoBehaviour
             ScoreManager.instance.AddScore(pointsValue);
         }
 
+
+        if (audioSource != null && PopBalloon != null)
+        {
+        AudioSource.PlayClipAtPoint(PopBalloon,transform.position);
+        }
         // 3. Destrói o balão vazio
+        
         Destroy(gameObject);
+      
     }
 }
