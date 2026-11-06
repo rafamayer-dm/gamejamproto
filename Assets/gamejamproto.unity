@@ -356,8 +356,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 101879968}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0.9997849, z: -0, w: -0.020743156}
-  m_LocalPosition: {x: 0.108, y: 0.06743002, z: 1.378}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.695, y: -0.272, z: 1.349}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -375,7 +375,7 @@ GameObject:
   - component: {fileID: 138554543}
   - component: {fileID: 138554542}
   - component: {fileID: 138554544}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -944,7 +944,7 @@ GameObject:
   - component: {fileID: 407113064}
   - component: {fileID: 407113063}
   - component: {fileID: 407113062}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Gun
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -980,6 +980,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::Gun
   bulletPrefab: {fileID: 3910982368827023522, guid: a0c43ade06b64564492858ab7f919762, type: 3}
   firePoint: {fileID: 101879969}
+  bulletSpeed: 30
+  cameraTransform: {fileID: 231484652}
+  aimDistance: 50
 --- !u!64 &407113063
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -2236,7 +2239,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 911029548}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: HeadTarget
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3044,7 +3047,7 @@ GameObject:
   - component: {fileID: 2146934504}
   - component: {fileID: 2146934503}
   - component: {fileID: 2146934502}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Capsule
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3204,11 +3207,15 @@ PrefabInstance:
       objectReference: {fileID: 204923084}
     - target: {fileID: 2818014238178506869, guid: a0c43ade06b64564492858ab7f919762, type: 3}
       propertyPath: m_VersionIndex
-      value: 1501
+      value: 1513
       objectReference: {fileID: 0}
     - target: {fileID: 3910982368827023522, guid: a0c43ade06b64564492858ab7f919762, type: 3}
       propertyPath: m_Name
       value: Bullet
+      objectReference: {fileID: 0}
+    - target: {fileID: 3910982368827023522, guid: a0c43ade06b64564492858ab7f919762, type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4163891002474624044, guid: a0c43ade06b64564492858ab7f919762, type: 3}
       propertyPath: m_Mesh
@@ -3227,14 +3234,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 706391989124819588, guid: 6f6f3750c14d70d4cad5fe4a30227686, type: 3}
-      propertyPath: speed
-      value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2155149137571775265, guid: 6f6f3750c14d70d4cad5fe4a30227686, type: 3}
-      propertyPath: m_CollisionDetection
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5175129751935425732, guid: 6f6f3750c14d70d4cad5fe4a30227686, type: 3}
       propertyPath: m_Name
       value: Balloon

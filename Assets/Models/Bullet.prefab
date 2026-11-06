@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 4204738760686252653}
   - component: {fileID: 8623647063410531072}
   - component: {fileID: 72174993289750225}
-  - component: {fileID: 4163891002474624044}
   - component: {fileID: 3679853800442896664}
   - component: {fileID: 3126637044247556479}
   - component: {fileID: 9002727451655655592}
@@ -337,28 +336,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3910982368827023522}
   m_Mesh: {fileID: 0}
---- !u!64 &4163891002474624044
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3910982368827023522}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
 --- !u!114 &3679853800442896664
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -371,7 +348,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9e5214b286ad6f4b84d4166185fc458, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Bullet
-  speed: 10
 --- !u!54 &3126637044247556479
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -398,7 +374,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 1
+  m_CollisionDetection: 2
 --- !u!135 &9002727451655655592
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -414,7 +390,7 @@ SphereCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3

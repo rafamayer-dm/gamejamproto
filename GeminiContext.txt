@@ -1,0 +1,92 @@
+=== UNITY PROJECT CONTEXT ===
+Scene: gamejamproto
+
+--- SCENE HIERARCHY & COMPONENTS ---
+- Directional Light
+  [C] Light
+  [C] UniversalAdditionalLightData
+- Global Volume
+  [C] Volume
+- Player
+  [C] CharacterController
+  [C] PlayerMovement
+  [C] Rigidbody
+  - Capsule
+    [C] MeshFilter
+    [C] MeshRenderer
+    [C] CapsuleCollider
+  - HeadTarget
+  - Gun
+    [C] ProBuilderMesh
+    [C] ProBuilderShape
+    [C] MeshRenderer
+    [C] MeshFilter
+    [C] MeshCollider
+    [C] Gun
+- FPS
+  [C] CinemachineCamera
+  [C] CinemachineHardLockToTarget
+  [C] CinemachineRotateWithFollowTarget
+  - FirePoint
+- Floor
+  [C] ProBuilderMesh
+  [C] ProBuilderShape
+  [C] MeshRenderer
+  [C] MeshFilter
+  [C] BoxCollider
+- MainCamera
+  [C] CinemachineBrain
+  [C] Camera
+  [C] UniversalAdditionalCameraData
+- Balloon
+  [C] Balloon
+  [C] SphereCollider
+  [C] Rigidbody
+  - Sphere
+    [C] MeshFilter
+    [C] MeshRenderer
+    - Cylinder
+      [C] MeshFilter
+      [C] MeshRenderer
+      [C] CapsuleCollider
+  - Pig
+    [C] Pig
+    [C] Rigidbody
+    [C] BoxCollider
+    - pig
+      [C] MeshFilter
+      [C] MeshRenderer
+- SkyLimit
+  [C] BoxCollider
+  [C] Skylimit
+  - Cube
+    [C] MeshFilter
+    [C] MeshRenderer
+    [C] BoxCollider
+- SpawnPoint
+  [C] PigSpawner
+- SpawnPoint (1)
+- SpawnPoint (2)
+- SpawnPoint (3)
+- Bullet
+  [C] ProBuilderMesh
+  [C] ProBuilderShape
+  [C] MeshRenderer
+  [C] MeshFilter
+  [C] Bullet
+  [C] Rigidbody
+  [C] SphereCollider
+
+--- C# SCRIPTS (ASSETS) ---
+Assets/Code/Balloon.cs
+Assets/Code/Bullet.cs
+Assets/Code/CameraCollison.cs
+Assets/Code/Gun.cs
+Assets/Code/Pig.cs
+Assets/Code/PigSpawner.cs
+Assets/Code/PlayerMovement.cs
+Assets/Code/ResetGame.cs
+Assets/Code/Skylimit.cs
+Assets/Editor/GeminiContextExporter.cs
+Assets/TutorialInfo/Scripts/Editor/ReadmeEditor.cs
+Assets/TutorialInfo/Scripts/Readme.cs

@@ -2,23 +2,22 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    public float speed = 20f;
-
-    private void Update()
+    private void OnCollisionEnter(Collision collision)
     {
-        transform.position += transform.forward * speed * Time.deltaTime;
-    }
-private void OnTriggerEnter(Collider other)
-{
-    Debug.Log("BALA ACERTOU: " + other.name);
-    Balloon balloon = other.GetComponentInParent<Balloon>();
+        if (collision.gameObject.GetComponentInParent<PlayerMovement>() != null) return;
 
-    if (balloon != null)
-    {
-        Debug.Log("BALAO ACERTADO");
-        balloon.Pop();
-    }
+        Balloon balloon = collision.gameObject.GetComponentInParent<Balloon>();
 
-    Destroy(gameObject);
-}
+        if (balloon != null)
+        {
+            balloon.Pop();
+        }
+        else
+        {
+            // Se bater num balão e ele não estourar, este erro vai aparecer na Consola!
+            Debug.LogWarning("Acertei o objeto [" + collision.gameObject.name + "] mas ele NÃO tem o script Balloon.cs anexado!");
+        }
+
+        Destroy(gameObject);
+    }
 }
